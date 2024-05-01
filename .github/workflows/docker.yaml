@@ -16,6 +16,7 @@ on:
 env:
   DOCKER-CONTEXT: ./
   DOCKER-FILE: ./Dockerfile
+  APT_INSTALL_PKGS: git
   PIP_INSTALL_PKGS: mkdocs mkdocs-material pymdown-extensions mkdocs-git-revision-date-localized-plugin mkdocs-link-embeds-plugin
 
 jobs:
@@ -42,6 +43,8 @@ jobs:
           context: ${{ env.DOCKER-CONTEXT }}
           file: ${{ env.DOCKER-FILE }}
           tags: ghcr.io/${{ github.repository_owner }}/mkdocs-serve 
-          build-args: PIP_INSTALL_PKGS= ${{ env.PIP_INSTALL_PKGS }}
+          build-args: |
+            APT_INSTALL_PKGS= ${{ env.APT_INSTALL_PKGS }}
+            PIP_INSTALL_PKGS= ${{ env.PIP_INSTALL_PKGS }}
           no-cache: true
           push: true
