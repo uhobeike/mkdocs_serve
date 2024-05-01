@@ -16,7 +16,7 @@ on:
 env:
   DOCKER-CONTEXT: ./
   DOCKER-FILE: ./Dockerfile
-  PIP_INSTALL_PKGS: mkdocs mkdocs-material pymdown-extensions mkdocs-git-revision-date-plugin mkdocs-link-embeds-plugin
+  PIP_INSTALL_PKGS: mkdocs mkdocs-material pymdown-extensions mkdocs-git-revision-date-localized-plugin mkdocs-link-embeds-plugin
 
 jobs:
   docker:
